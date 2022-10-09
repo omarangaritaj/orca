@@ -1,0 +1,2289 @@
+{
+	"info": {
+		"_postman_id": "a2fbad9c-be35-419b-aed9-ffcf71ce737a",
+		"name": "Orca",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Authentication",
+			"item": [
+				{
+					"name": "/auth-user",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}/auth-user",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"auth-user"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/forgot-password",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"email\": \"your@email.com\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}/forgot-password",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"forgot-password"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/reset-password",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"email\":\"your@email.com\",\n  \"password\":\"orcaorca\",\n  \"token\":\"{{token}}\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}/reset-password",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"reset-password"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/email-verify",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"email\":\"your@email.com\",\n  \"token\":\"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7Il9pZCI6IjYzMWRlZDJjYWFkODVjN2IzOTMxYzkwYyIsImVtYWlsIjoieW91ckBlbWFpbC5jb20ifSwiaWF0IjoxNjY1MjMzODQzfQ.w-v5KOLJWhFLbqxOs6_dX2NrQXXET0U3iqZa91wZa8M\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}/email-verify",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"email-verify"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/logout",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"email\":\"your@email.com\",\n  \"password\":\"orcaorca\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}/logout",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"logout"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/signup",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"email\":\"test1@test.com\",\n  \"fullName\":\"Mi nombre completo\",\n  \"username\": \"mynickname1\",\n  \"password\":\"ergergefg\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}/signup",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"signup"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Users",
+			"item": [
+				{
+					"name": "/users/get-users",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}/users/get-users",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"users",
+								"get-users"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/users/online-users",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}/users/online-users",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"users",
+								"online-users"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/users/new-members",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}/users/new-members",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"users",
+								"new-members"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/users/upload-photo",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}/users/upload-photo",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"users",
+								"upload-photo"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/users/:id",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}/users/:id",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"users",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "631ded2caad85c7b3931c90c"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/users/ban-user",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"id\":\"6341756698706d58de4ab49f\",\n  \"banned\":false\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}/users/ban-user",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"users",
+								"ban-user"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Settings",
+			"item": [
+				{
+					"name": "/settings",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"role\": \"SuperAdmin\",\n  \"emailVerified\": true,\n  \"banned\": false,\n  \"facebookId\": \"\",\n  \"googleId\": \"\",\n  \"githubId\": \"\",\n  \"isOnline\": false,\n  \"posts\": [],\n  \"likes\": [\n    \"631df7561cde4d8607bf660d\",\n    \"631e96d91b2e5aa30f98f9d9\"\n  ],\n  \"comments\": [\n    \"631df91f1cde4d8607bf6711\",\n    \"631df92e1cde4d8607bf671b\",\n    \"631dff511cde4d8607bf6869\"\n  ],\n  \"followers\": [],\n  \"following\": [],\n  \"notifications\": [],\n  \"messages\": [],\n  \"_id\": \"631ded2caad85c7b3931c90c\",\n  \"createdAt\": \"2022-09-11T14:14:04.768Z\",\n  \"email\": \"your@email.com\",\n  \"fullName\": null,\n  \"updatedAt\": \"2022-10-08T13:35:45.069Z\",\n  \"username\": null\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}/settings",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"settings"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/settings/update-community",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"communityName\": \"Orca\",\n  \"communityLogo\": \"https://res.cloudinary.com/dkkf9iqnd/image/upload/v1632978887/community/c572c15e-72ab-4a72-b955-8be12931af06.png\",\n  \"communityLogoPublicId\": \"\",\n  \"facebookLoginEnabled\": false,\n  \"googleLoginEnabled\": false,\n  \"githubLoginEnabled\": false,\n  \"primaryColor\": \"#0084FF\",\n  \"isEmailVerificationRequired\": false\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}/settings/update-community",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"settings",
+								"update-community"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/settings/upload-logo",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "",
+									"type": "file",
+									"src": "/home/omar/Imágenes/2022-07-15_18-16.png"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{host}}/settings/upload-logo",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"settings",
+								"upload-logo"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/settings/update-user",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"role\": \"SuperAdmin\",\n  \"emailVerified\": true,\n  \"banned\": false,\n  \"facebookId\": \"\",\n  \"googleId\": \"\",\n  \"githubId\": \"\",\n  \"isOnline\": false,\n  \"posts\": [],\n  \"likes\": [\n    \"631df7561cde4d8607bf660d\",\n    \"631e96d91b2e5aa30f98f9d9\"\n  ],\n  \"comments\": [\n    \"631df91f1cde4d8607bf6711\",\n    \"631df92e1cde4d8607bf671b\",\n    \"631dff511cde4d8607bf6869\"\n  ],\n  \"followers\": [],\n  \"following\": [],\n  \"notifications\": [],\n  \"messages\": [],\n  \"_id\": \"631ded2caad85c7b3931c90c\",\n  \"createdAt\": \"2022-09-11T14:14:04.768Z\",\n  \"email\": \"your@email.com\",\n  \"fullName\": null,\n  \"updatedAt\": \"2022-10-08T13:35:45.069Z\",\n  \"username\": null\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}/settings/update-user",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"settings",
+								"update-user"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/settings/users",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}/settings/users",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"settings",
+								"users"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/settings/users-total",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}/settings/users-total",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"settings",
+								"users-total"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/settings/update-password",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"password\":\"orcaorca\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}/settings/update-password",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"settings",
+								"update-password"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/settings/create-user",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"fullName\":\"my Full Name\",\n  \"email\":\"your_1@email.com\",\n  \"password\":\"orcaorca\",\n  \"role\":\"Admin\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}/settings/create-user",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"settings",
+								"create-user"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Channels",
+			"item": [
+				{
+					"name": "/channels",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"fullName\":\"my Full Name\",\n  \"email\":\"your_1@email.com\",\n  \"password\":\"orcaorca\",\n  \"role\":\"Admin\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}/channels",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"channels"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/channels/:name",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"fullName\":\"my Full Name\",\n  \"email\":\"your_1@email.com\",\n  \"password\":\"orcaorca\",\n  \"role\":\"Admin\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}/channels/Nombre del channel",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"channels",
+								"Nombre del channel"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/channels/create",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"name\":\"otro canal chachara\", \n  \"authRequired\":false, \n  \"description\":\"any description for my channel\", \n  \"order\":\"1\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}/channels/create",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"channels",
+								"create"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/channels/update",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"_id\":\"6341835995ece6605bf3bdf9\",\n  \"name\":\"New channel\", \n  \"authRequired\":false, \n  \"description\":\"any description for my channel\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}/channels/update",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"channels",
+								"update"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/channels/delete",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"id\":\"6341844c53c36f708442273a\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}/channels/delete",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"channels",
+								"delete"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/channels/reorder",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Get Token\", function () {",
+									"  const jsonData = pm.response.json();",
+									"  pm.environment.set(\"token\", jsonData.token);",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"sortedChannels\":[\n    {\"_id\":\"6341846653c36f7084422743\", \"order\": 2},\n    {\"_id\":\"631df6811cde4d8607bf659c\", \"order\": 4}\n  ]\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}/channels/reorder",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"channels",
+								"reorder"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Post",
+			"item": [
+				{
+					"name": "/posts/channel/:channelId",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/posts/channel/:channelId",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"posts",
+								"channel",
+								":channelId"
+							],
+							"variable": [
+								{
+									"key": "channelId",
+									"value": "631df6811cde4d8607bf659c"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/posts/author/:authorId",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/posts/author/:authorId",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"posts",
+								"author",
+								":authorId"
+							],
+							"variable": [
+								{
+									"key": "authorId",
+									"value": "631ded2caad85c7b3931c90c"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/posts/follow",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/posts/follow",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"posts",
+								"follow"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/posts/create",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"title\":\"Es el título de mi resolución\",\n  \"channelId\": \"634195f43aaccc7e005afade\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}/posts/create",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"posts",
+								"create"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/posts/update",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"title\":\"any title_a\",\n  \"channelId\": \"6341846653c36f7084422743\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}/posts/update",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"posts",
+								"update"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/posts/delete",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"id\":\"631e958d1b2e5aa30f98f9ca\", \n  \"imagePublicId\":\"\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}/posts/delete",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"posts",
+								"delete"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/posts/pin",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"id\": \"631e958d1b2e5aa30f98f9ca\",\n  \"pinned\": true\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}/posts/pin",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"posts",
+								"pin"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Likes",
+			"item": [
+				{
+					"name": "/likes/create",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"postId1\":\"631df6931cde4d8607bf65ae\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}/likes/create",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"likes",
+								"create"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/likes/delete",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"id\":\"6342f2468a3d6921864be777\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}/likes/delete",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"likes",
+								"delete"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Comments",
+			"item": [
+				{
+					"name": "/comments/create",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"comment\":\"Un comentario en un post\",\n  \"postId\":\"631df6c81cde4d8607bf65e1\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}/comments/create",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"comments",
+								"create"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/comments/delete",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"id\":\"6342f4dbe807882a612db700\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}/comments/delete",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"comments",
+								"delete"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Notifications",
+			"item": [
+				{
+					"name": "/notifications",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/notifications",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"notifications"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/notifications/author-and-user/:userId",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/notifications/author-and-user/:userId",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"notifications",
+								"author-and-user",
+								":userId"
+							],
+							"variable": [
+								{
+									"key": "userId",
+									"value": "63417e4295ece6605bf3bdb7"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/notifications/create",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"userId\": \"631ded2caad85c7b3931c90c\",\n  \"postId\": \"\",\n  \"notificationType\": \"\",\n  \"notificationTypeId\": \"\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}/notifications/create",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"notifications",
+								"create"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/notifications/delete",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"id\": \"\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}/notifications/delete",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"notifications",
+								"delete"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/notifications/seen",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}/notifications/seen",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"notifications",
+								"seen"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/notifications/messages-seen",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}/notifications/messages-seen",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"notifications",
+								"messages-seen"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Follow",
+			"item": [
+				{
+					"name": "/follow/create",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"userId\":\"631df11640a4ec83aa2c0d15\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}/follow/create",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"follow",
+								"create"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/follow/delete",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"id\":\"6342fd726e93f84204e44ad7\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}/follow/delete",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"follow",
+								"delete"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Messages",
+			"item": [
+				{
+					"name": "/messages",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}/messages",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"messages"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/messages/create",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"message\":\"un mensaje que quiero enviar\",\n  \"receiver\":\"63417e4295ece6605bf3bdb7\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}/messages/create",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"messages",
+								"create"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/messages/conversations",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}/messages/conversations",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"messages",
+								"conversations"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/messages/update-seen",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"sender\":\"631ded2caad85c7b3931c90c\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}/messages/update-seen",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"messages",
+								"update-seen"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Search",
+			"item": [
+				{
+					"name": "/search/all/:searchQuery",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"sender\":\"631ded2caad85c7b3931c90c\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}/search/all/:searchQuery",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"search",
+								"all",
+								":searchQuery"
+							],
+							"variable": [
+								{
+									"key": "searchQuery",
+									"value": "my Full Name"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/search/users/:searchQuery",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"sender\":\"631ded2caad85c7b3931c90c\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}/search/users/:searchQuery",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"search",
+								"users",
+								":searchQuery"
+							],
+							"variable": [
+								{
+									"key": "searchQuery",
+									"value": "my Full Name"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "/login",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Get Token\", function () {",
+							"  const jsonData = pm.response.json();",
+							"  pm.environment.set(\"token\", jsonData.token);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"email\":\"your@email.com\",\n  \"password\":\"orcaorca\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{host}}/login",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"login"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
